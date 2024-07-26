@@ -1,0 +1,21 @@
+.component {
+    display: flex;
+    cursor: pointer;
+    position: relative;
+
+    select {
+        padding-left: 20px;
+    }
+}
+
+.icon {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    svg {
+        width: 20px;
+        height: 20px;
+    }
+}

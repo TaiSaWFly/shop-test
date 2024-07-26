@@ -1,0 +1,184 @@
+@import "../../../styles/colors.scss";
+@import "../../../styles/mixins.scss";
+
+.component {
+    @include component-indent;
+
+    padding: 90px 100px 170px 90px;
+
+    overflow: hidden;
+    border-radius: 50px;
+    background-color: $blue-1;
+    position: relative;
+
+    @media (max-width: 1000px) {
+        padding: 50px 50px 300px 50px;
+    }
+
+    @media (max-width: 520px) {
+        padding: 30px 30px 300px 30px;
+    }
+}
+
+.info {
+    width: 100%;
+    max-width: 440px;
+    color: $white-1;
+    position: relative;
+    z-index: 10;
+
+    @media (max-width: 1000px) {
+        margin: 0 auto;
+    }
+}
+
+.title {
+    margin-bottom: 15px;
+    font-size: 4.2rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    line-height: 1.2;
+    word-spacing: 0.15em;
+
+    @media (max-width: 720px) {
+        text-align: center;
+        font-size: 3.2rem;
+    }
+
+    @media (max-width: 520px) {
+        font-size: 2.5rem;
+    }
+}
+
+.sub_title {
+    margin-bottom: 50px;
+    font-size: 1.5rem;
+
+    @media (max-width: 720px) {
+        text-align: center;
+    }
+
+    @media (max-width: 520px) {
+        margin-bottom: 25px;
+    }
+}
+
+.action {
+    width: 100%;
+    padding: 2rem 0.8em;
+    text-align: center;
+
+    background-color: $violet-1;
+    border-radius: 12.5px;
+    position: relative;
+
+    &:hover {
+        color: $white-1;
+        background-color: darken($color: $violet-1, $amount: 10);
+    }
+}
+
+.action_chevron {
+    width: 35px;
+    height: 35px;
+
+    border: 1px solid $white-1;
+    border-radius: 50%;
+
+    position: absolute;
+    top: 50%;
+    right: 0.8em;
+    transform: translateY(-50%);
+
+    & svg {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.component_bg {
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    @media (max-width: 1200px) {
+        left: 80px;
+    }
+
+    @media (max-width: 1000px) {
+        top: 200px;
+        left: 50%;
+
+        transform: translateX(-50%);
+    }
+
+    @media (max-width: 520px) {
+        transform: translateX(-30%);
+    }
+
+    @media (max-width: 450px) {
+        transform: translateX(-10%);
+    }
+}
+
+.bg_a {
+    width: 920px;
+    height: 235px;
+    background-image: url("../../../../public/assets/other/bg-banner.png");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    position: absolute;
+    right: 30px;
+    bottom: 0;
+    z-index: 2;
+}
+
+.bg_b {
+    width: 512px;
+    height: 395px;
+    background-image: url("../../../../public/assets/other/bg-banner-telegram.png");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    position: absolute;
+    right: 105px;
+    bottom: 5px;
+    z-index: 1;
+
+    @media (max-width: 1120px) {
+        width: 383px;
+        height: 295px;
+        right: 116px;
+        bottom: 76px;
+    }
+}
+
+.bg_c {
+    width: 1150px;
+    height: 850px;
+    background-image: url("../../../../public/assets/other/Scene_7.png");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    position: absolute;
+    right: -75px;
+    bottom: -215px;
+    z-index: 3;
+    transform: rotate(5deg);
+
+    @media (max-width: 1120px) {
+        width: 1050px;
+        height: 750px;
+        right: -145px;
+        bottom: -112px;
+    }
+}

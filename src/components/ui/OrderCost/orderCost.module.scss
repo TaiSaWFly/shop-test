@@ -1,0 +1,135 @@
+@import "../../../styles/colors.scss";
+@import "../../../styles/mixins.scss";
+
+.component {
+    @include component-indent;
+}
+
+.component_wrap {
+    margin: 0 auto;
+    padding: 25px 50px;
+    width: 100%;
+    max-width: 300px;
+
+    text-align: center;
+    border-radius: 25px;
+    background-color: rgba($color: $blue-1, $alpha: 0.1);
+
+    position: relative;
+}
+
+.title {
+    margin-bottom: 30px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.cost_field__wrap {
+    margin-bottom: 20px;
+}
+
+.cost_field {
+    text-align: center;
+    color: $blue-1;
+    border-color: $blue-1;
+    border-radius: 50px;
+
+    &::placeholder {
+        color: $blue-1;
+        text-align: center;
+    }
+}
+
+.action_list {
+    margin-bottom: 30px;
+}
+
+.list_item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+
+    &:last-of-type {
+        margin-bottom: 0;
+    }
+}
+
+.action {
+    width: 100%;
+    max-width: 150px;
+
+    color: $blue-1;
+    text-transform: capitalize;
+
+    border-radius: 50px;
+    background-color: rgba($color: $blue-1, $alpha: 0.2);
+
+    &:hover {
+        color: $white-1;
+    }
+}
+
+.action_chevron {
+    width: 40px;
+    border-radius: 50%;
+    background-color: $blue-1;
+    cursor: pointer;
+}
+
+.info_cost {
+    margin-bottom: 15px;
+}
+
+.info_price {
+    margin-bottom: 15px;
+    font-size: 1.35rem;
+    font-weight: 600;
+}
+
+.info_delivery {
+    font-size: 1.2rem;
+    color: $gray-1;
+}
+
+.action_order {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    padding: 0.8em;
+
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    & svg {
+        stroke: $black-1;
+        transition: stroke 0.2s ease-in-out;
+    }
+
+    &:hover {
+        & .action_order__chevron {
+            transform: translate(4px, 0);
+        }
+
+        & svg {
+            stroke: $blue-1;
+        }
+    }
+}
+
+.action_order__title {
+    margin-right: 5px;
+}
+
+.action_order__chevron {
+    width: 15px;
+    height: 15px;
+
+    border-radius: 50%;
+    background-color: $white-1;
+
+    transform: translate(0, 0);
+    transition: transform 0.2s ease-in-out;
+}

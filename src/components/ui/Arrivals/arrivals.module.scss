@@ -1,0 +1,49 @@
+@import "../../../styles/colors.scss";
+@import "../../../styles/mixins.scss";
+
+.component {
+    @include component-indent;
+    margin-top: 50px;
+
+    @media (max-width: 720px) {
+        margin-top: 30px;
+    }
+}
+
+.arivals {
+    margin-bottom: 50px;
+
+    &:last-of-type {
+        margin-bottom: 0;
+    }
+}
+
+.arrivals_component {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto 20px auto;
+}
+
+.title {
+    margin-bottom: 25px;
+    font-size: 3rem;
+    font-weight: 600;
+    text-align: center;
+
+    & span {
+        text-transform: capitalize;
+        color: $gray-1;
+    }
+
+    @media (max-width: 720px) {
+        font-size: 2.5rem;
+    }
+
+    @media (max-width: 520px) {
+        font-size: 2.2rem;
+    }
+}
+
+.action {
+    margin: 0 auto;
+}

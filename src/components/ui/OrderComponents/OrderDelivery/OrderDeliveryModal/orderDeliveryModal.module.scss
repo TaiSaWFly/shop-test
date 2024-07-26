@@ -1,0 +1,40 @@
+@import "../../../../../styles/colors.scss";
+
+.delivery_controls {
+    margin: 30px;
+    max-width: 340px;
+    width: 100%;
+    overflow: hidden;
+
+    @media (max-width: 770px) {
+        display: block;
+        margin: 0;
+        padding: 15px;
+        max-width: 100%;
+
+        background-color: $white-1;
+
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 1100;
+
+        &.controls_open {
+            height: 100%;
+        }
+    }
+}
+
+.delivery_map {
+    width: 100%;
+    min-width: 500px;
+    height: 100%;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    overflow: hidden;
+
+    @media (max-width: 770px) {
+        border-radius: 15px;
+        min-width: 100%;
+    }
+}

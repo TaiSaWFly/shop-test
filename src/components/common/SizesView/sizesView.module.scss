@@ -1,0 +1,29 @@
+@import "../../../styles/colors.scss";
+
+.component {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.item {
+    padding: 15px 20px;
+    font-size: 1.6rem;
+    font-weight: 400;
+
+    cursor: pointer;
+    border: 1px solid $gray-2;
+    border-radius: 50px;
+
+    transition: border-color 0.2s ease-in-out;
+
+    &.active {
+        color: $white-1;
+        background-color: $black-1;
+        border-color: $black-1;
+    }
+
+    &:hover {
+        border-color: $black-1;
+    }
+}

@@ -1,0 +1,14 @@
+@import "../../../../styles/colors.scss";
+
+.component {
+    margin-bottom: 25px;
+}
+
+.action {
+    display: flex;
+    justify-content: space-between;
+
+    width: 100%;
+    padding: 1em 0.8em;
+    background-color: $blue-1;
+}

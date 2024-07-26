@@ -1,0 +1,30 @@
+@import "../../../../styles/colors.scss";
+
+.component {
+    margin-bottom: 25px;
+}
+
+.pagination_wrap {
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.pagination {
+    display: flex;
+    align-items: center;
+}
+
+.pagination_count {
+    margin: 0 10px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: $black-1;
+}
+
+.pagination_prev,
+.pagination_next {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}

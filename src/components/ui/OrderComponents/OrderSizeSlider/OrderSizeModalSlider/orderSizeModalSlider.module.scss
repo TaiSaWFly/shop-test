@@ -1,0 +1,93 @@
+@import "../../../../../styles/colors.scss";
+
+.slider {
+    height: 100%;
+    background-color: lighten($color: $gray-2, $amount: 20);
+    position: relative;
+
+    & table {
+        width: 100%;
+        height: 100%;
+        font-size: 2rem;
+        font-weight: 600;
+        color: $gray-1;
+
+        & thead {
+            width: 100%;
+            padding: 20px 25px;
+
+            display: flex;
+            justify-content: space-around;
+            border-bottom: 1px solid $gray-2;
+            background-color: lighten($color: $gray-2, $amount: 20);
+
+            position: relative;
+            z-index: 100;
+
+            th {
+                text-align: start;
+                width: 140px;
+            }
+        }
+
+        & tbody {
+            width: 100%;
+            height: 100%;
+
+            font-size: 2rem;
+            font-weight: 600;
+            color: $black-1;
+            position: relative;
+            overflow: hidden;
+
+            & .slider_list {
+                width: 100%;
+
+                tr {
+                    padding: 12px 25px;
+                    display: flex;
+                    justify-content: space-around;
+                    cursor: pointer;
+                }
+
+                td {
+                    width: 140px;
+                    text-align: start;
+                }
+
+                position: absolute;
+                top: 372px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+
+        & tfoot {
+            background-color: lighten($color: $gray-2, $amount: 20);
+            position: relative;
+            z-index: 100;
+
+            & .slider_action {
+                padding: 20px 25px;
+                text-align: center;
+                color: $blue-1;
+                cursor: pointer;
+                border-top: 1px solid $gray-2;
+            }
+        }
+    }
+}
+
+.ative_window {
+    width: calc(100% - 25px);
+    height: 40px;
+
+    border-radius: 10px;
+    border: 4px solid $blue-1;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    z-index: 1000;
+}

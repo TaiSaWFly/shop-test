@@ -1,0 +1,32 @@
+@import "../../../../styles/colors.scss";
+@import "../../../../styles/mixins.scss";
+
+.component {
+    @include component-indent;
+}
+
+.component_info {
+    margin-bottom: 50px;
+    text-align: center;
+
+    @media (max-width: 720px) {
+        font-size: 2.5rem;
+        margin-bottom: 25px;
+    }
+}
+
+.title {
+    margin-bottom: 15px;
+    font-size: 3.5rem;
+    font-weight: 700;
+
+    @media (max-width: 720px) {
+        font-size: 2.5rem;
+    }
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: $gray-1;
+}

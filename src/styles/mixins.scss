@@ -1,0 +1,9 @@
+@import "./colors.scss";
+
+@mixin component-indent {
+    margin: 80px 0;
+
+    @media (max-width: 720px) {
+        margin: 40px 0;
+    }
+}

@@ -1,0 +1,66 @@
+@import "../../../../../styles/colors.scss";
+
+.component {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow: hidden;
+    height: 100%;
+}
+
+.title {
+    font-size: 2.3rem;
+    font-weight: 600;
+}
+
+.info {
+    display: inline-block;
+    padding: 15px;
+
+    font-size: 1.6rem;
+    font-weight: 600;
+    border: 2px solid $black-1;
+    border-radius: 10px;
+}
+
+.component_field {
+    font-size: 1.8rem;
+    padding: 12px 13px;
+    border-radius: 8px;
+    transition: border-color 0.2s ease-in-out;
+
+    &:hover,
+    &:focus {
+        border-color: $gray-1;
+    }
+}
+
+.result_list {
+    overflow: auto;
+
+    @media (max-width: 770px) {
+        display: none;
+
+        &.list_open {
+            display: block;
+        }
+    }
+}
+
+.result_item {
+    padding: 15px;
+    cursor: pointer;
+    border-bottom: 1px solid $gray-2;
+}
+
+.item_name {
+    font-size: 1.4rem;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.item_description {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    color: $gray-1;
+}

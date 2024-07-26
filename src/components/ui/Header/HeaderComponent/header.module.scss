@@ -1,0 +1,47 @@
+@import "../../../../styles/colors.scss";
+
+.component {
+    padding: 25px;
+    background-color: rgba($color: $blue-1, $alpha: 0.7);
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+    box-shadow: 0px 5px 15px 3px rgba(89, 187, 191, 0.35);
+
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    @media (max-width: 720px) {
+        padding: 15px;
+    }
+}
+
+.component_wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+
+    @media (max-width: 520px) {
+        .component_nav {
+            order: 1;
+        }
+    }
+}
+
+.component_group {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo {
+    & a {
+        color: $black-1;
+
+        &:hover {
+            color: $gray-1;
+        }
+    }
+}

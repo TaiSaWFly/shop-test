@@ -1,0 +1,41 @@
+@import "../../../../styles/colors.scss";
+
+.component {
+    position: relative;
+}
+
+.nav_list {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    font-size: 1.4rem;
+    text-transform: capitalize;
+
+    @media (max-width: 520px) {
+        flex-direction: column;
+        padding: 15px;
+
+        border-radius: 10px;
+        box-shadow: -1px 0px 8px 4px rgba(34, 60, 80, 0.22);
+        background-color: $blue-1;
+
+        position: absolute;
+        top: 50px;
+        right: 0;
+    }
+}
+
+.nav_link {
+    & a {
+        color: $black-1;
+
+        &:hover {
+            color: $white-1;
+        }
+    }
+}
+
+.nav_icon {
+    cursor: pointer;
+}

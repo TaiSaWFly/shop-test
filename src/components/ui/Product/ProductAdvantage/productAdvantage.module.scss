@@ -1,0 +1,59 @@
+@import "../../../../styles/colors.scss";
+
+.component {
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+
+.component_wrap {
+    border-bottom: 2px solid $gray-2;
+}
+
+.advantage_title {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+
+    font-size: 2.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+
+    cursor: pointer;
+    background-color: $white-1;
+
+    position: relative;
+    z-index: 10;
+
+    @media (max-width: 1200px) {
+        font-size: 2rem;
+    }
+}
+
+.advantage_title__wrap {
+    display: flex;
+    align-items: center;
+}
+
+.advantage_title__icon {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.advantage_title__chevron {
+    display: flex;
+    align-items: center;
+    transform: rotate(0deg);
+    transition: transform 0.2s ease-in-out;
+
+    &.active {
+        transform: rotate(-180deg);
+    }
+}
+
+.advantage_description {
+    padding: 5px 5px 5px 20px;
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+}

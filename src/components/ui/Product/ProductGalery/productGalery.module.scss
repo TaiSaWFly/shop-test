@@ -1,0 +1,115 @@
+@import "../../../../styles/colors.scss";
+
+.component {
+    padding-left: 60px;
+    position: relative;
+
+    @media (max-width: 1200px) {
+        padding: 0;
+    }
+}
+
+.slider {
+    position: relative;
+}
+
+.product_slide {
+    padding: 0 40px;
+}
+
+.product_image__wrap {
+    width: 100%;
+    padding-bottom: 64%;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.product_image {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    color: transparent;
+    object-fit: contain;
+}
+
+.slide_prev,
+.slide_next {
+    width: 25px;
+    height: 25px;
+
+    border: 1px solid $gray-2;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: $white-1;
+    transition: border-color 0.2s ease-in-out;
+
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    &:hover {
+        border-color: $black-2;
+    }
+}
+
+.slide_prev {
+    left: 7.5px;
+}
+.slide_next {
+    right: 7.5px;
+}
+
+.paginate {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    @media (max-width: 1200px) {
+        display: flex;
+        justify-content: center;
+        position: static;
+    }
+}
+
+.paginate_item {
+    margin-bottom: 5px;
+    padding: 5px;
+
+    width: 55px;
+    height: 55px;
+
+    border: 1px solid $gray-2;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: border-color 0.2s ease-in-out;
+
+    &.active {
+        border-color: $black-2;
+    }
+
+    &:hover {
+        border-color: $black-2;
+    }
+
+    &:last-of-type {
+        margin-bottom: 0;
+    }
+
+    @media (max-width: 1200px) {
+        margin-bottom: 0;
+        margin-right: 5px;
+
+        &:last-of-type {
+            margin-right: 0;
+        }
+    }
+}
+
+.paginate_item__image_wrap {
+    height: 100%;
+    position: relative;
+}

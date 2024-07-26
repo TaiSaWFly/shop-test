@@ -1,0 +1,29 @@
+@import "../../../../styles/colors.scss";
+
+.component {
+    display: flex;
+    gap: 10px;
+
+    & .action_reset,
+    & .action_submit {
+        padding: 1.5rem;
+        width: 100%;
+    }
+
+    & .action_reset {
+        background: transparent;
+        color: $black-1;
+        border-color: $gray-2;
+
+        &:hover {
+            border-color: $black-1;
+        }
+    }
+
+    & .action_submit {
+        background: $blue-1;
+        &:hover {
+            background: lighten($color: $blue-1, $amount: 10);
+        }
+    }
+}

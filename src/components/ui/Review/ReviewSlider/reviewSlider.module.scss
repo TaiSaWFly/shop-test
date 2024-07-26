@@ -1,0 +1,93 @@
+@import "../../../../styles/colors.scss";
+
+.component {
+    width: 100%;
+    max-width: 550px;
+
+    margin: 0 auto;
+    padding: 0 35px;
+    position: relative;
+}
+
+.review_info {
+    margin-bottom: 25px;
+    display: flex;
+}
+
+.review_quote {
+    position: absolute;
+    top: 0;
+
+    & svg {
+        width: 35px;
+        height: 35px;
+
+        stroke: $blue-1;
+        transform: rotate(180deg);
+    }
+
+    &:first-of-type {
+        left: 0;
+    }
+
+    &:last-of-type {
+        right: 0;
+
+        & svg {
+            transform: rotateX(180deg);
+        }
+    }
+}
+
+.review_content {
+    font-size: 1.8rem;
+    line-height: 1.3;
+    font-weight: 600;
+    text-align: center;
+
+    @media (max-width: 720px) {
+        font-size: 1.5rem;
+    }
+}
+
+.review_action__wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.review_action {
+    padding: 2rem;
+    margin-bottom: 10px;
+
+    font-size: 1.2rem;
+    color: $black-1;
+
+    border-radius: 50px;
+    border: 2px solid $blue-1;
+    background-color: transparent;
+
+    &:hover {
+        color: $white-1;
+        border-color: darken($color: $blue-1, $amount: 10);
+    }
+
+    @media (max-width: 720px) {
+        padding: 1.5rem;
+    }
+}
+
+.review_star {
+    display: flex;
+}
+
+.review_star__icon {
+    padding: 0 2px;
+
+    & svg {
+        width: 20px;
+        height: 20px;
+        stroke: #eab200;
+        fill: #eab200;
+    }
+}

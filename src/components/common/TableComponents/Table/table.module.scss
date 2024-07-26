@@ -1,0 +1,49 @@
+@import "../../../../styles/colors.scss";
+
+.table_title {
+    padding: 15px;
+    font-size: 2.2rem;
+    text-align: center;
+    background-color: $white-1;
+
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.table {
+    font-size: 1.4rem;
+    white-space: nowrap;
+    border-collapse: collapse;
+
+    & thead {
+        border-top: 1px solid $gray-2;
+        border-bottom: 1px solid $gray-2;
+
+        & tr {
+            & th {
+                width: 100%;
+                padding: 8px 15px;
+
+                font-size: 1.4rem;
+                font-weight: 400;
+                text-align: start;
+            }
+        }
+    }
+
+    & tbody {
+        border-bottom: 1px solid $gray-2;
+
+        & tr {
+            border-bottom: 1px solid $gray-2;
+            font-weight: 400;
+
+            & td {
+                width: 100%;
+                padding: 8px 15px;
+                padding: 8px 15px;
+            }
+        }
+    }
+}

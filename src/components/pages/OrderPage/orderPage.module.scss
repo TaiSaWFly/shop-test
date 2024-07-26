@@ -1,0 +1,67 @@
+@import "../../../styles/colors.scss";
+@import "../../../styles/mixins.scss";
+
+.component {
+    @include component-indent;
+    margin-top: 50px;
+
+    @media (max-width: 720px) {
+        margin-top: 30px;
+    }
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.component_wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.title {
+    font-size: 3.2rem;
+    font-weight: 600;
+
+    @media (max-width: 720px) {
+        font-size: 2.8rem;
+    }
+}
+
+.order_form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form_info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    font-size: 2rem;
+    font-weight: 600;
+    border-top: 1px solid $gray-2;
+}
+
+.form_info_price {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.form_action {
+    font-size: 2rem;
+    @media (max-width: 720px) {
+        font-size: 1.8rem;
+    }
+}
+
+.no_content {
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-align: center;
+}

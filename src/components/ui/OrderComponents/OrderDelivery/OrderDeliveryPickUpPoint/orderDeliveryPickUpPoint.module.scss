@@ -1,0 +1,48 @@
+@import "../../../../../styles/colors.scss";
+
+.component {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.title,
+.address,
+.work_time {
+    display: flex;
+    gap: 10px;
+}
+
+.title {
+    gap: 15px;
+    margin-bottom: 25px;
+    font-size: 2.4rem;
+    font-weight: 600;
+}
+
+.title_icon {
+    cursor: pointer;
+}
+
+.address,
+.work_time {
+    margin-bottom: 15px;
+    align-items: center;
+    font-size: 1.4rem;
+
+    & svg {
+        width: 20px;
+        height: 20px;
+        color: $gray-1;
+    }
+}
+
+.action {
+    font-size: 2.4rem;
+    font-weight: 700;
+
+    @media (max-width: 870px) {
+        font-size: 1.8rem;
+    }
+}

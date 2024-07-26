@@ -1,0 +1,123 @@
+@import "./colors.scss";
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+    font-weight: 500;
+}
+
+a {
+    display: block;
+    color: $gray-1;
+    text-decoration: none;
+    cursor: pointer;
+
+    transition: color 0.15s ease-in-out;
+
+    &:hover {
+        color: $black-1;
+    }
+}
+
+ul,
+ol,
+li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+button {
+    display: block;
+    padding: 0.8em 2em;
+
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    font-size: 1.4rem;
+    color: $white-1;
+    cursor: pointer;
+
+    background-color: $black-1;
+    border: 1px solid transparent;
+    border-radius: 7.5px;
+
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+        background-color: rgba($color: $blue-1, $alpha: 0.9);
+    }
+
+    &:disabled {
+        cursor: default;
+    }
+}
+
+.btn {
+    display: block;
+    padding: 0.8em 2em;
+
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    font-size: 1.4rem;
+    color: $white-1;
+    cursor: pointer;
+
+    background-color: $black-1;
+    border: 1px solid transparent;
+    border-radius: 7.5px;
+
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+        background-color: rgba($color: $blue-1, $alpha: 0.9);
+    }
+
+    &:disabled {
+        cursor: default;
+    }
+}
+
+input,
+textarea {
+    width: 100%;
+    height: auto;
+    padding: 0.8rem;
+
+    font-family: "Inter", sans-serif;
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: inherit;
+
+    background-color: transparent;
+    border: 2px solid rgba($color: $gray-2, $alpha: 0.6);
+    border-radius: 10px;
+    outline: none;
+
+    &::placeholder {
+        font-family: inherit;
+        color: rgba($color: $gray-2, $alpha: 0.6);
+        font-weight: inherit;
+    }
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+select {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 1.4rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}

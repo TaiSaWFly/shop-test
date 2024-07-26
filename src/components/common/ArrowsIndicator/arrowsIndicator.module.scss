@@ -1,0 +1,73 @@
+@import "../../../styles/colors.scss";
+
+.component {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.arrow {
+    position: absolute;
+    width: 25%;
+    height: 25%;
+
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+
+    &::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-left: 2px solid $white-1;
+        border-bottom: 2px solid $white-1;
+        transform: rotate(-135deg);
+        transform: translateX(-6px) rotate(-135deg);
+
+        animation: arrow-1 2s linear infinite -1.5s;
+    }
+
+    &::before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        border-left: 2px solid $white-1;
+        border-bottom: 2px solid $white-1;
+
+        position: absolute;
+        transform: translateX(-16px) rotate(-135deg);
+
+        animation: arrow-2 2s linear infinite -2s;
+    }
+}
+
+@keyframes arrow-2 {
+    0% {
+        opacity: 0;
+        transform: translateX(-16px) rotate(-135deg);
+    }
+    50% {
+        opacity: 1;
+        transform: translate(-12px, 0) rotate(-135deg);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-8px, 0) rotate(-135deg);
+    }
+}
+
+@keyframes arrow-1 {
+    0% {
+        opacity: 0;
+        transform: translateX(-6px) rotate(-135deg);
+    }
+    50% {
+        opacity: 1;
+        transform: translate(-2px, 0) rotate(-135deg);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(2px, 0) rotate(-135deg);
+    }
+}

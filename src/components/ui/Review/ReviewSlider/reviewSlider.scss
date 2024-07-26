@@ -1,0 +1,28 @@
+@import "../../../../styles/colors.scss";
+
+.review_slider {
+    & .slick-dots {
+        margin-top: 20px;
+        display: flex !important;
+        justify-content: center;
+
+        & .review_dots {
+            margin-right: 7px;
+            width: 9px;
+            height: 9px;
+
+            cursor: pointer;
+            color: transparent;
+
+            border-radius: 50%;
+            background-color: lighten($color: $black-1, $amount: 20);
+            transition: background-color 0.2s ease-in-out;
+        }
+
+        & .slick-active {
+            & .review_dots {
+                background-color: $black-1;
+            }
+        }
+    }
+}

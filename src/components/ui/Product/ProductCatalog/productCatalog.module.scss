@@ -1,0 +1,48 @@
+@import "../../../../styles/colors.scss";
+
+.component {
+    position: relative;
+}
+
+.product_image__wrap {
+    width: 100%;
+    padding-bottom: 64%;
+    margin-bottom: 7.5px;
+    position: relative;
+}
+
+.product_image {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    color: transparent;
+    object-fit: contain;
+}
+
+.product_info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 0 10px;
+    color: $black-1;
+}
+
+.product_price {
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.product_price__split {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.product_name {
+    font-size: 1.4rem;
+    line-height: 1.2;
+    font-weight: 500;
+}

@@ -1,0 +1,23 @@
+.component {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+
+    @media (max-width: 950px) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (max-width: 780px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.component_item_wrap {
+    display: flex;
+    justify-content: space-around;
+}
+
+.component_item {
+    width: 150px;
+    height: 150px;
+}

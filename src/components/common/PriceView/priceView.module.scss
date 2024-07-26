@@ -1,0 +1,9 @@
+@import "../../../styles/colors.scss";
+
+.split {
+    display: inline-block;
+    padding: 3px;
+    color: $white-1;
+    background-color: $black-1;
+    border-radius: 5px;
+}

@@ -1,0 +1,58 @@
+@import "../../../../styles/colors.scss";
+
+.component {
+    position: relative;
+}
+
+.product_image__wrap {
+    width: 100%;
+    padding-bottom: 64%;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.product_image {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    color: transparent;
+    object-fit: contain;
+}
+
+.product_info {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: $black-1;
+    text-align: center;
+
+    & div {
+        margin-bottom: 15px;
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+
+    @media (max-width: 720px) {
+        & div {
+            margin-bottom: 10px;
+
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    @media (max-width: 520px) {
+        font-size: 1.3rem;
+    }
+}
+
+.product_brand {
+    font-size: 1.3rem;
+    color: $gray-1;
+}

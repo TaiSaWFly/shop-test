@@ -1,0 +1,80 @@
+@import "../../../../styles/colors.scss";
+
+.component_mobile__info_wrap {
+    position: relative;
+}
+
+.component_mobile__info {
+    display: flex;
+    gap: 3px;
+    padding: 6px 22px 6px 10px;
+
+    font-size: 1.4rem;
+    text-wrap: nowrap;
+    color: $white-1;
+    cursor: pointer;
+
+    border-radius: 50px;
+    background-color: $black-2;
+    position: relative;
+
+    &.empty {
+        padding: 6px 10px;
+        color: $black-1;
+        background-color: lighten($color: $gray-2, $amount: 19);
+    }
+}
+
+.component_mobile__info_icon {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    right: 3px;
+    transform: translateY(-50%);
+
+    & svg {
+        stroke: $gray-1;
+        width: 20px;
+        height: 20px;
+        transition: stroke 0.1s ease-in-out;
+
+        &:hover {
+            stroke: $white-1;
+        }
+    }
+}
+
+.component_modal {
+    width: 100%;
+    max-width: 450px;
+
+    @media (max-width: 520px) {
+        max-width: 100%;
+    }
+}
+
+.component_filter__wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    padding: 40px;
+
+    .title {
+        margin-bottom: 25px;
+        font-size: 3rem;
+        font-weight: 600;
+    }
+
+    .delivery_item {
+        padding: 20px;
+        border-bottom: 1px solid $gray-2;
+
+        & span:last-of-type {
+            font-size: 1.6rem;
+        }
+    }
+
+    @media (max-width: 520px) {
+        padding: 30px;
+    }
+}

@@ -1,0 +1,17 @@
+.slick-slider {
+    height: 100%;
+
+    & .slick-list,
+    .slick-track {
+        height: 100%;
+    }
+
+    *:focus {
+        outline: 0;
+        outline: none;
+    }
+
+    & .slick-slide > div {
+        height: 100%;
+    }
+}

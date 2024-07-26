@@ -1,0 +1,5 @@
+export const BREAKPOINTS = {
+    BREAKPOINT_520: 520,
+    BREAKPOINT_720: 720,
+    BREAKPOINT_780: 780
+};

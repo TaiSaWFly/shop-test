@@ -1,0 +1,27 @@
+@import "../../../../styles/colors.scss";
+
+.component {
+    margin-bottom: 30px;
+}
+
+.sizes_info__description {
+    margin-bottom: 25px;
+}
+
+.sizes_info {
+    margin-bottom: 30px;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.sizes_title {
+    margin-bottom: 10px;
+    font-size: 2.2rem;
+    font-weight: 600;
+}
+
+.sizes_description {
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: $gray-1;
+}
