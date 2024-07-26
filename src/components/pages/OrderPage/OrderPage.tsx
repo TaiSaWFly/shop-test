@@ -96,11 +96,12 @@ const OrderPage = () => {
                                         required: "Обезательно к заполнению"
                                     }}
                                     render={({
-                                        field: { onChange },
+                                        field: { value, onChange },
                                         fieldState: { error }
                                     }) => (
                                         <OrderDeliveryComponent
                                             {...{
+                                                value,
                                                 onChange,
                                                 error: error?.message
                                             }}

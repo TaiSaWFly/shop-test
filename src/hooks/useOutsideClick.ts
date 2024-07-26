@@ -4,17 +4,9 @@ const useOutsideClick = (initialStateIsVisible: boolean) => {
     let timeout: any;
 
     const ref = useRef<HTMLDivElement | null>(null);
-    const refStopPropagation = useRef<any | null>(null);
     const [isShow, setShow] = useState(initialStateIsVisible);
 
     const handleClickOutside = (e: Event) => {
-        if (
-            refStopPropagation.current &&
-            refStopPropagation.current.contains(e.target as Node)
-        ) {
-            setTimeout(() => setShow(false), 10);
-        }
-
         if (ref.current && !ref.current.contains(e.target as Node)) {
             if (isShow) {
                 timeout = setTimeout(() => setShow(false), 10);
@@ -31,7 +23,7 @@ const useOutsideClick = (initialStateIsVisible: boolean) => {
         };
     });
 
-    return { ref, refStopPropagation, isShow, setShow };
+    return { ref, isShow, setShow };
 };
 
 export default useOutsideClick;

@@ -7,8 +7,7 @@ import { IDeliveryPoint } from "@/ts/models/IDeliveryPoint";
 import { IGeocodePoint } from "@/ts/models/IGeocodePoint";
 
 interface OrderDeliveryModalProps {
-    point: IDeliveryPoint | null;
-    setPoint: (point: IDeliveryPoint | null) => void;
+    onChange: (value: string) => void;
     onClose: () => void;
 }
 
@@ -18,11 +17,16 @@ const Map_dynamic = dynamic(() => import("../../../Map/MapComponent"), {
 
 const OrderDeliveryModal: FC<OrderDeliveryModalProps> = ({
     onClose,
-    setPoint,
-    point
+    onChange
 }) => {
+    const [point, setPoint] = useState<IDeliveryPoint | null>(null);
     const [pointPlace, setPointPlace] = useState<IGeocodePoint | null>(null);
     const [isOpen, setOpen] = useState(false);
+
+    const handleSubmit = () => {
+        point && onChange(point.address);
+        onClose();
+    };
 
     return (
         <>
@@ -37,7 +41,7 @@ const OrderDeliveryModal: FC<OrderDeliveryModalProps> = ({
                     <OrderDeliveryPickUpPoint
                         point={point}
                         setActivePoint={setPoint}
-                        onClose={onClose}
+                        onSubmit={handleSubmit}
                     />
                 ) : (
                     <OrderDeliverySearchPickUpPoint

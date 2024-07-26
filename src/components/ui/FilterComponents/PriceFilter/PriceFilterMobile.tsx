@@ -1,58 +1,30 @@
 "use client";
 
-import { FC, useEffect, useState } from "react";
+import { FC, useEffect } from "react";
 import style from "./priceFilter.module.scss";
 import { PriceFilterProps } from "./PriceFilter";
-import ComponentPriceFilter from "./ComponentPriceFilter";
 import { useAppSelector } from "@/hooks/reduxHooks/reduxHooks";
 import { useActions } from "@/hooks/reduxHooks/useActions";
-import { FormChangeArgsType, PriceFilterDataType } from "@/ts/types/app.types";
 import { initialStatePriceFilter } from "@/data/initialState.data";
 import PriceView from "@/components/common/PriceView/PriceView";
 import { X } from "lucide-react";
 import useOutsideClick from "@/hooks/useOutsideClick";
 import { ModalMotion } from "@/components/common/Modal/Modal";
 import handleBodyScrollLock from "@/utils/handleBodyScrollLock";
-import FilterActions from "../FilterActions/FilterActions";
 import { AnimatePresenceComponent } from "@/lib/motion";
+import PriceFilterModal from "./PriceFilterModal";
 
 const PriceFilterMobile: FC<PriceFilterProps> = ({ priceInfo }) => {
-    const { isShow, setShow, ref, refStopPropagation } = useOutsideClick(false);
+    const { isShow, setShow, ref } = useOutsideClick(false);
     const { price } = useAppSelector((state) => state.filter);
     const { setPrice } = useActions();
-    const [data, setData] = useState<PriceFilterDataType>(price);
-
-    useEffect(() => {
-        if (!isShow) {
-            setPrice(data);
-        }
-    }, [data]);
-
-    useEffect(() => {
-        setData(price);
-    }, [price]);
 
     useEffect(() => {
         handleBodyScrollLock(isShow);
-        if (!isShow) {
-            setData(price);
-        }
     }, [isShow]);
 
-    const handleChange = (target: FormChangeArgsType<string, string>) => {
-        setData((prevStare) => ({
-            ...prevStare,
-            [target.name]: target.value.replace(/[^0-9]/g, "")
-        }));
-    };
-
     const handleResetFilter = () => {
-        setData(initialStatePriceFilter);
-    };
-
-    const handleSubmitFilter = () => {
-        setPrice(data);
-        setShow(false);
+        setPrice(initialStatePriceFilter);
     };
 
     return (
@@ -106,18 +78,12 @@ const PriceFilterMobile: FC<PriceFilterProps> = ({ priceInfo }) => {
                         className={style.component_modal}
                     >
                         <div ref={ref} className={style.component_filter__wrap}>
-                            <ComponentPriceFilter
-                                className={style.component_filter__mobile}
-                                data={data}
-                                onChange={handleChange}
-                                priceFrom={priceInfo.priceFromInfo}
-                                priceTo={priceInfo.priceToInfo}
-                            />
-
-                            <FilterActions
-                                refStopPropagation={refStopPropagation}
-                                onResetFilter={handleResetFilter}
-                                onSubmitFilter={handleSubmitFilter}
+                            <PriceFilterModal
+                                {...{
+                                    isShow,
+                                    setShow: () => setShow(false),
+                                    priceInfo
+                                }}
                             />
                         </div>
                     </ModalMotion>

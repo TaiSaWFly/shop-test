@@ -12,44 +12,19 @@ import { DeliveryFilterDataType } from "@/ts/types/app.types";
 import FilterActions from "../FilterActions/FilterActions";
 import handleBodyScrollLock from "@/utils/handleBodyScrollLock";
 import { initialStateDiliveryFilter } from "@/data/initialState.data";
+import DeliveryFilterModal from "./DeliveryFilterModal";
 
 const DeliveryFilter = () => {
     const { delivery } = useAppSelector((state) => state.filter);
     const { setDilivery } = useActions();
-    const { isShow, setShow, ref, refStopPropagation } = useOutsideClick(false);
-
-    const [deliveryName, setDeliveryName] = useState("");
-    const [activeDelivery, setActiveDelivery] =
-        useState<DeliveryFilterDataType>(delivery);
-    const handleChange = (value: string) => setDeliveryName(value);
-
-    useEffect(() => {
-        const findDelivery =
-            deliveryData.find((data) => data.label === deliveryName) || null;
-        setActiveDelivery(findDelivery);
-    }, [deliveryName]);
-
-    useEffect(() => {
-        if (!isShow) {
-            setDilivery(activeDelivery);
-        }
-    }, [activeDelivery]);
+    const { isShow, setShow, ref } = useOutsideClick(false);
 
     useEffect(() => {
         handleBodyScrollLock(isShow);
-        if (!isShow) {
-            setDeliveryName(delivery ? delivery.label : "");
-        }
     }, [isShow]);
 
     const handleResetFilter = () => {
-        setDeliveryName("");
-        setActiveDelivery(initialStateDiliveryFilter);
-    };
-
-    const handleSubmitFilter = () => {
-        setDilivery(activeDelivery);
-        setShow(false);
+        setDilivery(initialStateDiliveryFilter);
     };
 
     return (
@@ -89,36 +64,13 @@ const DeliveryFilter = () => {
                         className={style.component_modal}
                     >
                         <div ref={ref} className={style.component_filter__wrap}>
-                            <div>
-                                <div className={style.title}>
-                                    Сроки доставки
-                                </div>
-
-                                <ul>
-                                    {deliveryData.map((data, i) => (
-                                        <li
-                                            key={data.label + i}
-                                            className={style.delivery_item}
-                                        >
-                                            <RadioField
-                                                name="delivery"
-                                                value={data.label}
-                                                checked={
-                                                    deliveryName === data.label
-                                                }
-                                                onChange={handleChange}
-                                            />
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-                            <div>
-                                <FilterActions
-                                    refStopPropagation={refStopPropagation}
-                                    onResetFilter={handleResetFilter}
-                                    onSubmitFilter={handleSubmitFilter}
-                                />
-                            </div>
+                            <DeliveryFilterModal
+                                {...{
+                                    isShow,
+                                    setShow: () => setShow(false),
+                                    deliveryData
+                                }}
+                            />
                         </div>
                     </ModalMotion>
                 )}

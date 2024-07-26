@@ -5,32 +5,28 @@ import style from "./orderDeliveryComponent.module.scss";
 import useOutsideClick from "@/hooks/useOutsideClick";
 import OrderDeliveryModal from "../OrderDeliveryModal/OrderDeliveryModal";
 import handleBodyScrollLock from "@/utils/handleBodyScrollLock";
-import { FC, FormEvent, useEffect, useState } from "react";
+import { FC, FormEvent, useEffect } from "react";
 import { ModalMotion } from "@/components/common/Modal/Modal";
 import { AnimatePresenceComponent } from "@/lib/motion";
 import TextField from "@/components/common/Fields/TextField/TextField";
-import { IDeliveryPoint } from "@/ts/models/IDeliveryPoint";
 import { MoveLeft } from "lucide-react";
 
 interface OrderDeliveryComponentProps {
     onChange: (value: string) => void;
+    value: string;
     error?: string;
 }
 
 const OrderDeliveryComponent: FC<OrderDeliveryComponentProps> = ({
     onChange,
+    value,
     error
 }) => {
     const { isShow, setShow, ref } = useOutsideClick(false);
-    const [point, setPoint] = useState<IDeliveryPoint | null>(null);
 
     useEffect(() => {
         handleBodyScrollLock(isShow);
     }, [isShow]);
-
-    useEffect(() => {
-        point && onChange(point.address);
-    }, [point]);
 
     return (
         <div className={style.component}>
@@ -49,7 +45,7 @@ const OrderDeliveryComponent: FC<OrderDeliveryComponentProps> = ({
                 <TextField
                     className={style.component_field}
                     name={"addressPoint"}
-                    value={point?.address || ""}
+                    value={value}
                     placeholder={"Выбрать пунк выдачи"}
                     error={error}
                     onClick={() => setShow(true)}
@@ -71,9 +67,10 @@ const OrderDeliveryComponent: FC<OrderDeliveryComponentProps> = ({
                                 className={style.component_modal__wrap}
                             >
                                 <OrderDeliveryModal
-                                    point={point}
-                                    setPoint={setPoint}
-                                    onClose={() => setShow(false)}
+                                    {...{
+                                        onChange,
+                                        onClose: () => setShow(false)
+                                    }}
                                 />
 
                                 <div

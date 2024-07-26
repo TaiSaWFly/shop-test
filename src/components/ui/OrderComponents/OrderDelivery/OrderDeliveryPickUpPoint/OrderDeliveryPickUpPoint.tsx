@@ -7,17 +7,17 @@ import { IDeliveryPoint } from "@/ts/models/IDeliveryPoint";
 interface OrderDeliveryPickUpPointProps {
     point: IDeliveryPoint;
     setActivePoint: (point: IDeliveryPoint | null) => void;
-    onClose: () => void;
+    onSubmit: () => void;
 }
 
 const OrderDeliveryPickUpPoint: FC<OrderDeliveryPickUpPointProps> = ({
     point,
     setActivePoint,
-    onClose
+    onSubmit
 }) => {
     const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        onClose();
+        onSubmit();
     };
 
     return (
